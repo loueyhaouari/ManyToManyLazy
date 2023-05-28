@@ -4,6 +4,7 @@ package com.example.demo;
 import com.example.demo.entities.Post;
 import com.example.demo.entities.Tag;
 import com.example.demo.repositories.PostRepository;
+import com.example.demo.repositories.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +18,8 @@ public class DemoApplication implements CommandLineRunner {
 
     @Autowired
     private PostRepository postRepository;
-
+@Autowired
+private TagRepository tagRepository;
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
@@ -48,6 +50,7 @@ public class DemoApplication implements CommandLineRunner {
 
         this.postRepository.save(post);
         this.postRepository.save(post1);
+
 
     }
 };
